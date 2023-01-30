@@ -1,0 +1,39 @@
+server:
+  port: 9999
+
+spring:
+  datasource:
+    hikari:
+      driver-class-name: org.h2.Driver
+      pool-name: app-hikari-pool
+      register-mbeans: false
+      connection-test-query: SELECT 1
+      username: sa
+      password: password
+      jdbc-url: jdbc:h2:file:./keeper-server/data/keeper;MODE=MySQL
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        show_sql: true
+        format_sql: true
+    open-in-view: false
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      printer:
+        enabled: true
+    path: /api
+
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
+    com.querydsl.sql: DEBUG
