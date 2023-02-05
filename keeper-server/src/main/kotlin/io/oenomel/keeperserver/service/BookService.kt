@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class BookService(
-    var bookRepository: BookRepository
+     var bookRepository: BookRepository
 ) {
 
     fun fetchAllBooks(pagination: Pagination): Page<BookModel> {

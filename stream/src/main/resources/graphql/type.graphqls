@@ -1,0 +1,48 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+"""
+도서 타입
+"""
+type Book {
+    id: ID
+    title: String
+    isbn: String
+    inventories: [Inventory]
+}
+
+"""
+각 도서의 개별 재고 타입
+"""
+type Inventory {
+    id: ID
+    status: InventoryStatus!
+    book: Book!
+}
+
+input Pagination {
+    page: Int
+    size: Int
+}
+
+input BookInput {
+    id: ID
+    title: String
+    isbn: String
+}
+
+input InventoryInput {
+    id: ID
+    status: InventoryStatus
+    bookId: ID
+}
+
+enum InventoryStatus {
+    ENABLED
+    DISABLED
+    LOAN
+    DISCARDED
+}
+

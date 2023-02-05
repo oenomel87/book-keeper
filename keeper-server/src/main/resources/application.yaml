@@ -10,7 +10,7 @@ spring:
       connection-test-query: SELECT 1
       username: sa
       password: password
-      jdbc-url: jdbc:h2:file:./keeper-server/data/keeper;MODE=MySQL
+      jdbc-url: jdbc:h2:file:../data/keeper;MODE=MySQL
   h2:
     console:
       enabled: true

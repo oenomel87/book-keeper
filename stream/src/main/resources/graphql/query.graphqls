@@ -1,0 +1,11 @@
+
+type Query {
+
+    allBooks(page: Pagination!): [Book!]!
+
+    book(id: ID!): Book!
+
+    allInventories(book: BookInput!): [Inventory!]!
+
+    inventory(id: ID!): Inventory!
+}

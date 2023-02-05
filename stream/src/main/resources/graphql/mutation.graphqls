@@ -1,0 +1,11 @@
+
+type Mutation {
+
+    saveBook(book: BookInput!): Book!
+
+    saveInventory(book: BookInput!, inventory: InventoryInput!): Inventory!
+
+    deleteBook(bookId: ID!): Boolean
+
+    deleteInventory(inventoryId: ID!): Boolean
+}
